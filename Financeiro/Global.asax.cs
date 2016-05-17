@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using WebMatrix.WebData;
 
 namespace Financeiro
 {
@@ -13,6 +14,12 @@ namespace Financeiro
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            //Inicializando o simple membership
+            WebSecurity.InitializeDatabaseConnection("FinancasContext", "Usuarios","Id","Nome", true);
+
+
+
         }
     }
 }

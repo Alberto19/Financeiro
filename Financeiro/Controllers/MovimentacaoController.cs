@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Financeiro.Controllers
 {
+    [Authorize]
     public class MovimentacaoController : Controller
     {
        
