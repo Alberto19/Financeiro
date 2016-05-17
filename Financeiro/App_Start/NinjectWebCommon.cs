@@ -10,6 +10,7 @@ namespace Financeiro.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Financeiro.DAO;
 
     public static class NinjectWebCommon 
     {
@@ -61,7 +62,7 @@ namespace Financeiro.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<FincasContext>().ToSelf().InRequestScope();
+            kernel.Bind<FinancasContext>().ToSelf().InRequestScope();
         }        
     }
 }

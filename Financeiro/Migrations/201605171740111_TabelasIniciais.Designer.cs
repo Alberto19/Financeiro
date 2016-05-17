@@ -13,7 +13,7 @@ namespace Financeiro.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605161721131_TabelasIniciais"; }
+            get { return "201605171740111_TabelasIniciais"; }
         }
         
         string IMigrationMetadata.Source

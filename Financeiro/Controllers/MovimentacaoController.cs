@@ -46,7 +46,22 @@ namespace Financeiro.Controllers
             return View(movimentacoes);
         }
 
+        public ActionResult MovimentacoesPorUsuario(MovimentacoesPorUsuarioModel model)
+        {
+            model.Usuarios = usuarioDAO.List();
+            model.Movimentacoes = movimentacaoDAO.BuscaPorUsuario(model.UsuarioId);
 
+            return View(model);
+        }
+
+        public ActionResult Busca(BuscaMovimentacoesModel model)
+        {
+            model.Usuarios = usuarioDAO.List();
+            model.Movimentacoes = movimentacaoDAO.Busca(  model.ValorMinimo, model.ValorMaximo,
+                                                                    model.DataMinima, model.DataMaxima, 
+                                                                    model.Tipo, model.UsuarioId);
+            return View(model);
+        }
 
 
     }
